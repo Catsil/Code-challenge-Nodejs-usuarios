@@ -20,6 +20,7 @@ app.set('view engine', '.hbs');
 
 //middlewares
 app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 //global variables
@@ -28,7 +29,7 @@ app.use((req, res , next)=>{
 });
 
 //routes
-app.use(require('./routes/'));
+app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links', require('./routes/links'));
 
