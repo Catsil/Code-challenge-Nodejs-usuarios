@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const {promisify} =require('util');
+const {promisify} =require('util'); //esto permite usar las promesas o asyncaway
 const {database}= require('./keys');
 
 const pool= mysql.createPool(database);
