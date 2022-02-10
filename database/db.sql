@@ -1,6 +1,8 @@
 CREATE DATABASE database_links;
+
 USE database_links;
 
+-- USERS TABLE
 CREATE TABLE users(
     id INT(11) NOT NULL,
     username VARCHAR(16) NOT NULL,
@@ -8,14 +10,19 @@ CREATE TABLE users(
     fullname VARCHAR(100) NOT NULL
 );
 
---USERS TABLE
+
 ALTER TABLE users
     ADD PRIMARY KEY (id);
 
 ALTER TABLE users
-    MODIFY id INT(11) NOT NULL AUTO_INCREMENT =2;
+    MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT =2;
 
 DESCRIBE users;
+
+INSERT INTO users (id, username, password, fullname)
+    VALUES(1, 'jhon', 'password1', 'jc');
+
+SELECT * FROM users;
 
 --LINKS TABLES
 CREATE TABLE links (
